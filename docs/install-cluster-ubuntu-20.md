@@ -97,7 +97,8 @@ docker pull k8s.gcr.io/coredns:1.6.7
 ##### Initialize Kubernetes Cluster
 Update the below command with the ip address of kmaster
 ```
-kubeadm init --apiserver-advertise-address=172.16.16.100 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
+kubeadm init --apiserver-advertise-address=10.10.10.10 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
+kubeadm init --apiserver-advertise-address=10.10.10.20 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
 ```
 ##### Deploy Calico network
 ```
