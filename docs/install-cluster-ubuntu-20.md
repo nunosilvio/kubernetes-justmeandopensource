@@ -10,9 +10,10 @@ This documentation guides you in setting up a cluster with one master node and o
 |Worker|kworker.example.com|172.16.16.101|Ubuntu 20.04|1G|1|
 
 ## Define proxy
+```
 export http_proxy=http://your.proxy.server:port/
 export https_proxy=http://your.proxy.server:port/
-
+```
 ## On both Kmaster and Kworker
 Perform all the commands as root user unless otherwise specified
 ##### Disable Firewall
