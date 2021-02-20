@@ -70,7 +70,6 @@ Hack required to provision K8s v1.15+ in LXC containers
 ### Change docker proxy settings
 ```
 mkdir -p /etc/systemd/system/docker.service.d
-vi /etc/systemd/system/docker.service.d/http-proxy.conf
 
 cat >>/etc/systemd/system/docker.service.d/http-proxy.conf<<EOF
 [Service]
