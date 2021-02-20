@@ -12,6 +12,7 @@ This documentation guides you in setting up a cluster with one master node and o
 |Node|knode21.nunosilvio.pt|10.10.10.21|Ubuntu 20.04|1G|1|
 ##
 Change hosts
+```
 cat >>/etc/hosts<<EOF
 10.10.10.10 kmaster10.nunosilvio.pt
 10.10.10.11 knode11.nunosilvio.pt
@@ -22,6 +23,7 @@ hostnamectl set-hostname kmaster10.nunosilvio.pt
 hostnamectl set-hostname knode11.nunosilvio.pt
 hostnamectl set-hostname kmaster20.nunosilvio.pt
 hostnamectl set-hostname knode21.nunosilvio.pt
+```
 ## Define proxy
 ```
 export http_proxy=http://10.10.10.1:3128/
