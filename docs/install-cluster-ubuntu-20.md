@@ -11,8 +11,8 @@ This documentation guides you in setting up a cluster with one master node and o
 
 ## Define proxy
 ```
-export http_proxy=http://10.10.10.1.3128/
-export https_proxy=http://10.10.10.1.3128/
+export http_proxy=http://10.10.10.1:3128/
+export https_proxy=http://10.10.10.1:3128/
 export no_proxy="10.96.0.0/12,192.168.0.0/16,10.10.10.0/24"
 ```
 ## On both Kmaster and Kworker
