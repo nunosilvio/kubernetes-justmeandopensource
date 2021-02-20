@@ -81,8 +81,7 @@ Hack required to provision K8s v1.15+ in LXC containers
 }
 ```
 
-## On kmaster
-### Change docker proxy settings
+## Change docker proxy settings
 ```
 mkdir -p /etc/systemd/system/docker.service.d
 
@@ -95,6 +94,8 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
+
+## On kmaster
 ### Download images using docker
 ```
 kubeadm config images list
