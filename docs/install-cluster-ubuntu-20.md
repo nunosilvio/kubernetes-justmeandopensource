@@ -6,8 +6,10 @@ This documentation guides you in setting up a cluster with one master node and o
 ## Assumptions
 |Role|FQDN|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
-|Master|kmaster.example.com|172.16.16.100|Ubuntu 20.04|2G|2|
-|Worker|kworker.example.com|172.16.16.101|Ubuntu 20.04|1G|1|
+|Master|kmaster10.nunosilvio.pt|10.10.10.10|Ubuntu 20.04|2G|2|
+|Node|knode11.nunosilvio.pt|10.10.10.11|Ubuntu 20.04|2G|2|
+|Master|kmaster20.nunosilvio.pt|10.10.10.20|Ubuntu 20.04|1G|1|
+|Node|kmaster21.nunosilvio.pt|10.10.10.21|Ubuntu 20.04|1G|1|
 
 ## Define proxy
 ```
