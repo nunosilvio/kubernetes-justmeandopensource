@@ -71,11 +71,13 @@ Hack required to provision K8s v1.15+ in LXC containers
 ```
 mkdir -p /etc/systemd/system/docker.service.d
 vi /etc/systemd/system/docker.service.d/http-proxy.conf
+
+cat >>/etc/systemd/system/docker.service.d/http-proxy.conf<<EOF
 [Service]
 Environment="HTTP_PROXY=http://10.10.10.1:3128"
 Environment="HTTPS_PROXY=http://10.10.10.1:3128"
 Environment="NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.0.0/16,10.10.10.0/24"
-
+EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
