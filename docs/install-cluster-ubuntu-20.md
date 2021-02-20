@@ -67,6 +67,30 @@ Hack required to provision K8s v1.15+ in LXC containers
 ```
 
 ## On kmaster
+### Change docker proxy settings
+mkdir -p /etc/systemd/system/docker.service.d
+vi /etc/systemd/system/docker.service.d/http-proxy.conf
+[Service]
+Environment="HTTP_PROXY=http://10.10.10.1:3128"
+Environment="HTTPS_PROXY=http://10.10.10.1:3128"
+Environment="NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.0.0/16,10.10.10.0/24"
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+### Download images using docker
+kubeadm config images list
+kubeadm config images pull
+
+docker pull k8s.gcr.io/kube-apiserver:v1.18.5
+docker pull k8s.gcr.io/kube-controller-manager:v1.18.5
+docker pull k8s.gcr.io/kube-scheduler:v1.18.5
+docker pull k8s.gcr.io/kube-proxy:v1.18.5
+docker pull k8s.gcr.io/pause:3.2
+docker pull k8s.gcr.io/etcd:3.4.3-0
+docker pull k8s.gcr.io/coredns:1.6.7
+
+
 ##### Initialize Kubernetes Cluster
 Update the below command with the ip address of kmaster
 ```
