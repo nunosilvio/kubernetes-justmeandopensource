@@ -84,6 +84,7 @@ sudo systemctl restart docker
 kubeadm config images list
 kubeadm config images pull
 
+Example:
 docker pull k8s.gcr.io/kube-apiserver:v1.18.5
 docker pull k8s.gcr.io/kube-controller-manager:v1.18.5
 docker pull k8s.gcr.io/kube-scheduler:v1.18.5
